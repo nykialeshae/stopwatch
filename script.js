@@ -7,11 +7,24 @@
 
 const secondsElement = document.getElementById('seconde-elapsed')
 let seconds = 0
+let interval;
+
+function displaySeconds() {
+    secondsElement.innerText = seconds
+}
 
 // A "Start" button to start the stopwatch running.
-document.getElementById('start').onclick = function() {
-    setInterval(function() {
+const startButton = document.getElementById('start')
+startButton.onclick = function() {
+    interval = setInterval(function() {
+        startButton.setAttribute('disabled', true)
         seconds++
-        secondsElement.innerText = seconds
+        displaySeconds()
     }, 1000);
+}
+
+// A "Stop" button to pause/stop it.
+document.getElementById('stop').onclick = function() {
+    clearInterval(interval)
+    startButton.removeAttribute('disabled', false)
 }

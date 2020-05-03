@@ -7,10 +7,21 @@
       p {
         font-family: sans-serif;
       }
+      button {
+          margin-right: 8px;
+          background-color: yellow;
+      }
     </style>
   </head>
   <body>
-    <p class="clock"></p>
+    <p>
+        <span id="seconde-elapsed">0</span> seconds
+    </p>
+    <p>
+        <button id="start">Ready, Set, GO!</button>
+        <button id="stop">Break Time!</button>
+        <button id="reset">Start Over</button>
+    </p>
     <script src="./script.js" defer></script>
   </body>
 </html>
